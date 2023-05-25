@@ -58,6 +58,7 @@ public class PlayerCont : MonoBehaviour
      void OnTriggerEnter2D(Collider2D other)
     {
         GameObject timer = GameObject.Find("timer");
+        GameObject boss = GameObject.Find("boss");
         timer.GetComponent<timer>().damage();
     }
 }

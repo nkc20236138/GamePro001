@@ -8,6 +8,8 @@ public class kyori : MonoBehaviour
 {
     Text textConponent;
     int meitoru= 0000;
+    public GameObject bossmob;
+    int syuuki = 0 ;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,7 @@ public class kyori : MonoBehaviour
     {
         textConponent.text = meitoru +" km";
         meitoru++;
+       
     }
+   
 }
