@@ -12,7 +12,7 @@ public class timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.time = GameObject.Find("timer");
+        this.time = GameObject.Find("Timer");
     }
 
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class timer : MonoBehaviour
     }
     public void damage()
     {
+        //Debug.Log("sd" + zikan);
        zikan -= 0.1f;
     }
 }

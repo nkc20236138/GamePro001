@@ -10,12 +10,16 @@ public class PlayerCont : MonoBehaviour
     int time = 6000;
     Vector2 vector2 = Vector2.zero;
     Rigidbody2D rigit2D;
+    GameObject timer;
+    GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
         rigit2D = GetComponent<Rigidbody2D>();
        Application.targetFrameRate = 60;
         anim = gameObject.GetComponent<Animator>();
+        timer = GameObject.Find("Timer");
+        boss = GameObject.Find("bossmob");
     }
 
     // Update is called once per frame
@@ -55,10 +59,20 @@ public class PlayerCont : MonoBehaviour
         time--;
 
     }
-     void OnTriggerEnter2D()
+    
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject timer = GameObject.Find("timer");
-        GameObject boss = GameObject.Find("boss");
+        Debug.Log("crf");
+        
+        //timer.GetComponent<timer>().damage();
+        GameObject timer = GameObject.Find("Timer");
+        GameObject boss = GameObject.Find("bossmob");
         timer.GetComponent<timer>().damage();
+        if (other.gameObject.tag == "boss")
+        {
+            timer.GetComponent<timer>().damage();
+            boss.GetComponent<boss>().curiticaru();
+        }
+
     }
 }
