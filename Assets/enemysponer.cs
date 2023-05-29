@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class enemysponer : MonoBehaviour
 {
-
+    GameObject Player;
+    public GameObject Fire;
     public GameObject enemy;
     public GameObject bossmob;
     GameObject spone;
@@ -14,12 +15,18 @@ public class enemysponer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.Find("MyChar_0 (1)");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            GameObject spone = Instantiate(Fire);
+            spone.transform.position =  Player.transform.position + new Vector3(1, 0, 0);
+        }
+        
 
         delta++;
         syuuki++;

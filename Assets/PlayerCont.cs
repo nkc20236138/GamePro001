@@ -62,7 +62,6 @@ public class PlayerCont : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("crf");
         
         //timer.GetComponent<timer>().damage();
         GameObject timer = GameObject.Find("Timer");

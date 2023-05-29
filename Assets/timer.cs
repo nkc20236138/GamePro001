@@ -35,4 +35,8 @@ public class timer : MonoBehaviour
         //Debug.Log("sd" + zikan);
        zikan -= 0.1f;
     }
+    public void move()
+    {
+        zikan += 0.3f;
+    }
 }
