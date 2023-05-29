@@ -12,6 +12,7 @@ public class enemysponer : MonoBehaviour
     float span = 30f;
     float delta = 0f; 
    int syuuki = 0;
+    GameObject spon;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,9 @@ public class enemysponer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            GameObject spone = Instantiate(Fire);
-            spone.transform.position =  Player.transform.position + new Vector3(1, 0, 0);
+            //Debug.Log("gg");
+            GameObject spon= Instantiate(Fire);
+            spon.transform.position =  Player.transform.position + new Vector3(1, 0, 0);
         }
         
 

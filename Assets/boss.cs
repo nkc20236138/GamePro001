@@ -85,21 +85,22 @@ public class boss : MonoBehaviour
         kaunnter++;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        kaunnter++;
-        transform.Translate(1, 0, 0);
-        Debug.Log("boss");
-        if (kaunnter == 3)
-        {
-            transform.position = Vector2.zero;
-            if (kaunnter == 5)
+        
+            Debug.Log("bo");
+            if (kaunnter == 2)
             {
-                Destroy(gameObject);
-                kaunnter = 0;
+                transform.position = Vector2.zero;
+                if (kaunnter == 3)
+                {
+                    Destroy(gameObject);
+                    kaunnter = 0;
 
+                }
             }
-        }
-        kaunnter++;
+            kaunnter++;
+        
     }
+
 }

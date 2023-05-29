@@ -6,13 +6,15 @@ public class Firebool : MonoBehaviour
 {
     GameObject Player;
     GameObject enemy;
-    GameObject boss;
+   public GameObject boss;
+    int tairyoku = 0;
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("MyChar_0 (1)");
         enemy = GameObject.Find("Timer");
         boss = GameObject.Find("bossmob");
+
     }
 
     // Update is called once per frame
@@ -20,17 +22,26 @@ public class Firebool : MonoBehaviour
     {
 
         transform.position += new Vector3(0.1f, 0, 0);
+
+       
+        if (transform.position.x > 100)
+        {
+            Destroy(gameObject);
+
+        }
     }
 
-    public void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hb");
+    
         if(other.gameObject.tag == "boss")
         {
             Debug.Log("km");
             boss.GetComponent<boss>().curiticaru();
             enemy.GetComponent<timer>().move();
         }
-        else if(other.gameObject.tag == "enemy_01")
+        else 
         {
            Destroy(enemy);
         }
