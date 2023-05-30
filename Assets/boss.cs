@@ -5,13 +5,12 @@ using UnityEngine;
 public class boss : MonoBehaviour
 {
     int kaunnter = 0;
-    int sa ;
     int bo = 0;
     Vector2 sad =  Vector2.zero;
     // Start is called before the first frame update
     void Start()
     {
-        int sa = 0;
+     
       
     }
 
@@ -71,36 +70,54 @@ public class boss : MonoBehaviour
         //}
         bo++;
     }
-    public void curiticaru() 
-    {
+    //public void bosshit() 
+    //{
 
-        transform.Translate(1,0,0);
-        Debug.Log("boss");
-        if (kaunnter == 3)
-        {
-            Destroy(gameObject);
-            kaunnter = 0;
-            
-        }
-        kaunnter++;
-    }
+    //   // transform.Translate(1,0,0);
+    //    Debug.Log("boss");
+    //    if (kaunnter <= 3)
+    //    {
+    //        kaunnter = -1;
+    //        Destroy(gameObject);
+    //        Debug.Log("blake");
+    //    }
+    //   kaunnter++;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
             Debug.Log("bo");
-            if (kaunnter == 2)
-            {
-                transform.position = Vector2.zero;
+            
+            
+               
                 if (kaunnter == 3)
                 {
+            Debug.Log("fgh");
                     Destroy(gameObject);
-                    kaunnter = 0;
+                   kaunnter = 0;
 
                 }
-            }
+            
             kaunnter++;
+        if(collision.gameObject.tag == "Fire")
+        {
+            kaunnter++;
+        }
         
+    }
+
+    public void damage()
+    {
+        Debug.Log("kf");
+        if (kaunnter == 3)
+        {
+            Debug.Log("fgh");
+            Destroy(gameObject);
+            kaunnter = 0;
+
+        }
+        kaunnter++;
     }
 
 }

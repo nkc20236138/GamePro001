@@ -20,7 +20,7 @@ public class kyori : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textConponent.text = meitoru +" km";
+        textConponent.text = meitoru.ToString("0000000") +" km";
         meitoru++;
        
     }

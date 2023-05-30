@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class ememycontrollor : MonoBehaviour
 {
-    
+    float up = -0.05f;
+    GameObject speed;
+
     // Start is called before the first frame update
     void Start()
     {
+         speed = GameObject.Find("timer");
     
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-0.05f, 0, 0);
+        transform.Translate(up, 0, 0);
 
         if (transform.position.x < -15)
         {
@@ -24,7 +27,12 @@ public class ememycontrollor : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Fire")
+        {
+            up -= 0.01f;
+            Destroy(gameObject);
+            Debug.Log("oo");
+        }
         Destroy(gameObject);
-        Debug.Log("oo");
     }
 }

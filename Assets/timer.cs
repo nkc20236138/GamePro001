@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
@@ -29,14 +27,19 @@ public class timer : MonoBehaviour
         {
             SceneManager.LoadScene("titleScene");
         }
+        if (zikan >= 1) { zikan = 0.9999f; }
     }
     public void damage()
     {
         //Debug.Log("sd" + zikan);
-       zikan -= 0.1f;
+        zikan -= 0.1f;
     }
     public void move()
     {
         zikan += 0.3f;
+    }
+    public void hirl()
+    {
+        zikan += 0.01f;
     }
 }

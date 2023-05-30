@@ -70,7 +70,7 @@ public class PlayerCont : MonoBehaviour
         if (other.gameObject.tag == "boss")
         {
             timer.GetComponent<timer>().damage();
-            boss.GetComponent<boss>().curiticaru();
+           // boss.GetComponent<boss>().bosshit();
         }
 
     }
