@@ -5,21 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCont : MonoBehaviour
 {
-    private Animator anim;
+    //private Animator anim;
     float z = 0;
     int time = 6000;
     Vector2 vector2 = Vector2.zero;
     Rigidbody2D rigit2D;
     GameObject timer;
     GameObject boss;
+    GameObject enemy;
+   public int kirru;
+    Animator anim;
+   
     // Start is called before the first frame update
     void Start()
     {
         rigit2D = GetComponent<Rigidbody2D>();
        Application.targetFrameRate = 60;
-        anim = gameObject.GetComponent<Animator>();
+       // anim = gameObject.GetComponent<Animator>();
         timer = GameObject.Find("Timer");
         boss = GameObject.Find("bossmob");
+        enemy = GameObject.FindWithTag("Enemy_0 1");
+        kirru = 0;
+        //アニメーターコンポーネントをanim変数に保存
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,24 +38,38 @@ public class PlayerCont : MonoBehaviour
         vector2.x = z * -1;
 
 
-        if (vector2.x == -1)
-        {
+        //if (vector2.x == -1)
+        //{
 
-            anim.SetBool("Right", true);
-        }
-        else
-        {
-            anim.SetBool("Right", false);
-        }
+        //    anim.SetBool("Right", true);
+        //}
+        //else
+        //{
+        //    anim.SetBool("Right", false);
+        //}
 
-        if (vector2.x == 1)
+        //if (vector2.x == 1)
+        //{
+        //    //Bool型のパラメーターであるblRotをTrueにする
+        //    anim.SetBool("Light", true);
+        //}
+        //else
+        //{
+        //    anim.SetBool("Light", false);
+        //}
+        float y = Input.GetAxisRaw("Vertical");
+
+        if (y == 0)
         {
-            //Bool型のパラメーターであるblRotをTrueにする
-            anim.SetBool("Light", true);
+            anim.Play("massugugirl");
         }
-        else
+        else if (y == 1)
         {
-            anim.SetBool("Light", false);
+            anim.Play("Rightgirl");
+        }
+        else if(y == -1) 
+        {
+            anim.Play("Lighttrengirl");
         }
         this.rigit2D.transform.Translate(vector2.normalized / 15);
          vector2 = vector2 * 0;
@@ -73,5 +95,20 @@ public class PlayerCont : MonoBehaviour
            // boss.GetComponent<boss>().bosshit();
         }
 
+    }
+
+    public void kiru()
+    {
+        Debug.Log("kk");
+        kirru++;
+    }
+
+    public void touritu ()
+    {
+        for(int i = 0; i < kirru; i++)
+        {
+            Debug.Log("ks");
+            enemy.GetComponent<ememycontrollor>().power();
+        }
     }
 }

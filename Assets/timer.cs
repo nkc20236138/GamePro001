@@ -40,6 +40,6 @@ public class timer : MonoBehaviour
     }
     public void hirl()
     {
-        zikan += 0.01f;
+        zikan += 0.005f;
     }
 }

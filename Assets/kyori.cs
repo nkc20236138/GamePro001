@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class kyori : MonoBehaviour
 {
     Text textConponent;
-    int meitoru= 0000;
+   public int meitoru= 0;
     public GameObject bossmob;
-    int syuuki = 0 ;
-    // Start is called before the first frame update
+    
+    
     void Start()
     {
         textConponent = GetComponent<Text>();

@@ -7,10 +7,11 @@ public class boss : MonoBehaviour
     int kaunnter = 0;
     int bo = 0;
     Vector2 sad =  Vector2.zero;
+    GameObject timer;
     // Start is called before the first frame update
     void Start()
     {
-     
+        timer = GameObject.Find("Timer");
       
     }
 
@@ -115,6 +116,7 @@ public class boss : MonoBehaviour
             Debug.Log("fgh");
             Destroy(gameObject);
             kaunnter = 0;
+            timer.gameObject.GetComponent<timer>().move();
 
         }
         kaunnter++;

@@ -42,6 +42,7 @@ public class Firebool : MonoBehaviour
         {
             Debug.Log("aw");
             enemy.GetComponent<timer>().hirl();
+            Player.GetComponent<PlayerCont>().kiru();
         }
 
         Destroy(gameObject);
